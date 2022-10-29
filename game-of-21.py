@@ -1,4 +1,3 @@
-from pickle import TRUE
 import random
 
 class Game():
@@ -10,9 +9,9 @@ class Game():
         self.min_stones = 1
         self.max_stones = 3
 
-    #
-    # Public main methods
-    #
+#
+# Public main methods
+#
 
     def init(self, is_game_mode_misere: bool = True, is_singleplayer: bool = True, stones: int = 21, min_stones: int = 1, max_stones: int = 3) -> None:
         # Update settings by optional user input 
@@ -41,9 +40,9 @@ class Game():
             print('\n****An error occured while trying to run the game****')
             exit()
 
-    #
-    # Private main methods
-    #
+#
+# Private main methods
+#
 
     def __player_turn(self, stones: int, player: bool) -> int:
         self.__print_game(stones, player)
@@ -82,9 +81,9 @@ class Game():
         input('Press <ENTER> to continue')
         return stones
     
-    #
-    # Private helper methods
-    #
+#
+# Private helper methods
+#
 
     def __check_input_bool(self, boolean: bool) -> bool:
         try:
