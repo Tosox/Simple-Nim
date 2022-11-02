@@ -2,7 +2,6 @@ class Rules(object):
     def __init__(self) -> None:
         self.__VALUE_IN_RANGE_HINT = 'Please enter a value between {} and {}.'
         self.__misere = False
-        self.__singleplayer = True
         self.__coins = 21
         self.__min_take = 1
         self.__max_take = 3
@@ -14,14 +13,6 @@ class Rules(object):
     @misere.setter
     def misere(self, misere: bool) -> None:
         self.__misere = misere
-        
-    @property
-    def singleplayer(self) -> bool:
-        return self.__singleplayer
-    
-    @misere.setter
-    def singleplayer(self, singleplayer: bool) -> None:
-        self.__singleplayer = singleplayer
         
     @property
     def coins(self) -> int:

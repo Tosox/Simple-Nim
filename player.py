@@ -4,18 +4,18 @@ from abc import ABC, abstractmethod
 class Player(ABC):
     def __init__(self, rules: Rules) -> None:
         self._rules = rules
-        self.idx = 0
+        self.__idx = 0
         
     @property
     def idx(self):
-        return self.idx
+        return self.__idx
     
     @idx.setter
     def idx(self, index: int):
-        self.idx = index
+        self.__idx = index
         
     def __str__(self) -> str:
-        return self.idx
+        return str(self.idx + 1)
     
     @abstractmethod
     def do_turn(self, coins: int) -> int:

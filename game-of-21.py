@@ -1,7 +1,7 @@
 from player_manager import PlayerManager
 from computer_player import ComputerPlayer
 from human_player import HumanPlayer
-from player import Player
+from random_player import RandomPlayer
 from rules import Rules
 
 class GameOf21(object):
@@ -10,23 +10,29 @@ class GameOf21(object):
         self.__rules = rules
 
     def run(self) -> None:
-        self.__player_manager.add_player(ComputerPlayer(self.__rules))
-        self.__player_manager.add_player(ComputerPlayer(self.__rules))
-        self.__player_manager.randomize_player()
+        self.__player_manager.add_player(RandomPlayer(self.__rules))
+        self.__player_manager.add_player(RandomPlayer(self.__rules))
+        self.__player_manager.randomize_turn()
         coins = self.__rules.coins
         
         while (coins > 0):
-            self.__print_game(coins, self.__player_manager.get_current())
+            current_player = self.__player_manager.get_current_player()
             
-            coins -= self.__player_manager.get_current().do_turn(coins)
+            print('================================================')
+            print(f'Total coins: {coins} | Player: {current_player}')
+            
+            coins_take = current_player.do_turn(coins)
+            coins -= coins_take
+            
+            print(f'-> Takes {coins_take} coins')
+            print('================================================\n')
+                    
             if coins <= 0:
-                print(f'Player {self.__player_manager.get_current()} wins!')
+                print('================================================')
+                print(f'** Player {current_player} wins! **')
+                print('================================================')
             
-            self.__player_manager.next()
-
-    def __print_game(self, coins: int, player: Player) -> None:
-        print('================================================')
-        print(f'Total coins: {coins} | Player: {player}')
+            self.__player_manager.next_turn()
         
 
 if __name__ == '__main__':
