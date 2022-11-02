@@ -3,16 +3,17 @@ from abc import ABC, abstractmethod
 
 class Player(ABC):
     def __init__(self, rules: Rules) -> None:
+        self.PLAYER_TYPE = None
         self._rules = rules
-        self.__idx = 0
+        self.__name = ""
         
     @property
-    def idx(self):
-        return self.__idx
+    def name(self) -> str:
+        return self.__name
     
-    @idx.setter
-    def idx(self, index: int):
-        self.__idx = index
+    @name.setter
+    def name(self, name: str) -> None:
+        self.__name = name
         
     def __str__(self) -> str:
         return str(self.idx + 1)
