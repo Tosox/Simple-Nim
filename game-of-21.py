@@ -4,7 +4,7 @@ from rules import Rules
 
 class GameOf21(object):
     def __init__(self, rules: Rules = Rules()) -> None:
-        self.__player_manager = PlayerManager()
+        self.__player_manager = PlayerManager(rules)
         self.__rules = rules
         self.__coins = -1
         
@@ -15,11 +15,14 @@ class GameOf21(object):
         self.__coins = self.__rules.coins
 
     def run(self) -> None:
+        if self.__player_manager.player_count() != 2:
+            raise ValueError('Please call \'initialize()\' before running the game')
+        
         while (self.__coins > 0):
             current_player = self.__player_manager.get_current_player()
             
             print('================================================')
-            print(f'Total coins: {self.__coins} | Player: {current_player}')
+            print(f'{current_player}\'s turn | Total coins: {self.__coins}')
             
             coins_take = current_player.do_turn(self.__coins)
             self.__coins -= coins_take
@@ -29,14 +32,15 @@ class GameOf21(object):
                     
             if self.__coins <= 0:
                 print('================================================')
-                print(f'** Player {current_player} wins! **')
+                winning_player = current_player if not self.__rules.misere else self.__player_manager.get_next_player()
+                print(f'** {winning_player} wins! **')
                 print('================================================')
             
             self.__player_manager.next_turn()
         
 
-if __name__ == '__main__':
+if __name__ == '__main__':    
     game = GameOf21()
-    game.initilize((PlayerType.RANDOM, PlayerType.RANDOM), True)
+    game.initilize((PlayerType.PLAYER, PlayerType.COMPUTER), True)
     game.run()
     

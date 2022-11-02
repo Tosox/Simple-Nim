@@ -5,7 +5,7 @@ from rules import Rules
 class HumanPlayer(Player):
     def __init__(self, rules: Rules) -> None:
         super().__init__(rules)
-        self.PLAYER_TYPE = PlayerType.HUMAN
+        self.PLAYER_TYPE = PlayerType.PLAYER
         
     def do_turn(self, coins: int = -1) -> int:
         while True:
