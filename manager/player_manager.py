@@ -1,9 +1,10 @@
-from rules import Rules
-from player import Player
-from player_types import PlayerType
-from random_player import RandomPlayer
-from human_player import HumanPlayer
-from computer_player import ComputerPlayer
+from custom.rules import Rules
+from players.player import Player
+from players.player_types import PlayerType
+from players.random_player import RandomPlayer
+from players.human_player import HumanPlayer
+from players.computer_player import ComputerPlayer
+from players.ai_player import AiPlayer
 import random
 
 class PlayerManager(object):
@@ -20,7 +21,7 @@ class PlayerManager(object):
         elif player_type == PlayerType.COMPUTER:
             return ComputerPlayer(self.__rules)
         elif player_type == PlayerType.AI:
-            return ComputerPlayer(self.__rules)
+            return AiPlayer(self.__rules)
         
     def player_count(self) -> str:
         return len(self.__players)
@@ -44,8 +45,8 @@ class PlayerManager(object):
         return self.__players[self.__player_idx]
         
     def get_next_player(self) -> Player:
-        index = (self.__player_idx + 1) % 2
+        index = (self.__player_idx + 1) % self.player_count()
         return self.__players[index]
     
     def next_turn(self) -> None:
-        self.__player_idx = (self.__player_idx + 1) % 2
+        self.__player_idx = (self.__player_idx + 1) % self.player_count()

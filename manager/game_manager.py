@@ -1,8 +1,8 @@
-from player_manager import PlayerManager
-from player_types import PlayerType
-from rules import Rules
+from custom.rules import Rules
+from players.player_types import PlayerType
+from manager.player_manager import PlayerManager
 
-class GameOf21(object):
+class GameManager(object):
     def __init__(self, rules: Rules = Rules()) -> None:
         self.__player_manager = PlayerManager(rules)
         self.__rules = rules
@@ -38,9 +38,4 @@ class GameOf21(object):
             
             self.__player_manager.next_turn()
         
-
-if __name__ == '__main__':    
-    game = GameOf21()
-    game.initilize((PlayerType.PLAYER, PlayerType.COMPUTER), True)
-    game.run()
     
