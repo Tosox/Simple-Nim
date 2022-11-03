@@ -1,5 +1,5 @@
-from rules import Rules
-from player_types import PlayerType
+from custom.rules import Rules
+from players.player_types import PlayerType
 from abc import ABC, abstractmethod
 
 class Player(ABC):

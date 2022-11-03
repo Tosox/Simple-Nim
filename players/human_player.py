@@ -1,6 +1,6 @@
-from player_types import PlayerType
-from player import Player
-from rules import Rules
+from custom.rules import Rules
+from players.player_types import PlayerType
+from players.player import Player
 
 class HumanPlayer(Player):
     def __init__(self, rules: Rules) -> None:
