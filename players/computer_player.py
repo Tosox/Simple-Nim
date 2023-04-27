@@ -11,7 +11,7 @@ class ComputerPlayer(Player):
             
     def do_turn(self, coins: int) -> int:
         # Give the computer time to think (visually)
-        delay = (random.random() + 1) * 2
+        delay = (random.random() * 2) + 0.5
         time.sleep(delay)
         
         should_take = (coins - int(self._rules.misere)) % (self._rules.min_take + self._rules.max_take)
