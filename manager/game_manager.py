@@ -9,7 +9,7 @@ class GameManager(object):
         self.__rules = rules
         self.__coins = -1
         
-    def initilize(self, players: tuple[PlayerType], randomize: RandType):
+    def initilize(self, players: tuple[PlayerType], randomize: RandType):           
         self.__player_manager.add_players(players)
         if randomize == RandType.RANDOM:
             self.__player_manager.randomize_turn()
