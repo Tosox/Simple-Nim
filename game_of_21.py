@@ -64,14 +64,14 @@ def main(argv: list[str]) -> None:
         rand_idx = argv.index('--rand') + 1
         rand = int(argv[rand_idx])
     except ValueError:
-        rand = RandType.RANDOM
+        rand = 0
         
     if (rand < 0) or (rand > 2):
         print(f'{bcolors.FAIL}Error: random type is out of bounds{bcolors.ENDC}')
         return
-    
+        
     game = GameOf21()
-    game.initilize((p1_type, p2_type), rand)
+    game.initilize((p1_type, p2_type), RandType(rand))
     game.run()
     
 
