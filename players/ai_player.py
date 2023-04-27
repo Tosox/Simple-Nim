@@ -1,7 +1,7 @@
+import random
 from custom.rules import Rules
 from players.player_types import PlayerType
 from players.player import Player
-import random
 
 class AiPlayer(Player):
     def __init__(self, rules: Rules) -> None:

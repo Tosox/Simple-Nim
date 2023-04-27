@@ -1,3 +1,4 @@
+import random
 from custom.rules import Rules
 from players.player import Player
 from players.player_types import PlayerType
@@ -5,7 +6,6 @@ from players.random_player import RandomPlayer
 from players.human_player import HumanPlayer
 from players.computer_player import ComputerPlayer
 from players.ai_player import AiPlayer
-import random
 
 class PlayerManager(object):
     def __init__(self, rules: Rules) -> None:
