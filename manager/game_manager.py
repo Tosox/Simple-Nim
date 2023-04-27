@@ -1,4 +1,5 @@
 from custom.rules import Rules
+from custom.rand_types import RandType
 from players.player_types import PlayerType
 from manager.player_manager import PlayerManager
 
@@ -8,10 +9,12 @@ class GameManager(object):
         self.__rules = rules
         self.__coins = -1
         
-    def initilize(self, players: tuple[PlayerType], randomize: bool = True):
+    def initilize(self, players: tuple[PlayerType], randomize: RandType):
         self.__player_manager.add_players(players)
-        if randomize:
+        if randomize == RandType.RANDOM:
             self.__player_manager.randomize_turn()
+        elif randomize == RandType.PLAYER2:
+            self.__player_manager.next_turn()
         self.__coins = self.__rules.coins
 
     def run(self) -> None:
