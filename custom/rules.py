@@ -1,4 +1,4 @@
-class Rules(object):
+class Rules:
     def __init__(self) -> None:
         self.__VALUE_IN_RANGE_HINT = 'Please enter a value between {} and {}.'
         self.__misere = False

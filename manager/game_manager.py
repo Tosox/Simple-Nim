@@ -3,7 +3,7 @@ from custom.rand_types import RandType
 from players.player_types import PlayerType
 from manager.player_manager import PlayerManager
 
-class GameManager(object):
+class GameManager:
     def __init__(self, rules: Rules = Rules()) -> None:
         self.__player_manager = PlayerManager(rules)
         self.__rules = rules
@@ -21,7 +21,7 @@ class GameManager(object):
         if self.__player_manager.player_count() != 2:
             raise ValueError('Please call \'initialize()\' before running the game')
         
-        while (self.__coins > 0):
+        while self.__coins > 0:
             current_player = self.__player_manager.get_current_player()
             
             print('================================================')
