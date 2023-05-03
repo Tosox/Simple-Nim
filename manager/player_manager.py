@@ -7,7 +7,7 @@ from players.human_player import HumanPlayer
 from players.computer_player import ComputerPlayer
 from players.ai_player import AiPlayer
 
-class PlayerManager(object):
+class PlayerManager:
     def __init__(self, rules: Rules) -> None:
         self.__rules = rules
         self.__player_idx = 0
@@ -16,7 +16,7 @@ class PlayerManager(object):
     def __type_to_player(self, player_type: PlayerType) -> Player:
         if player_type == PlayerType.RANDOM:
             return RandomPlayer(self.__rules)
-        elif player_type == PlayerType.PLAYER:
+        elif player_type == PlayerType.HUMAN:
             return HumanPlayer(self.__rules)
         elif player_type == PlayerType.COMPUTER:
             return ComputerPlayer(self.__rules)
