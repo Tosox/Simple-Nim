@@ -28,6 +28,10 @@ _Alternatively, simply execute ['play.bat'](play.bat)_
 Two players will each take one, two or three coins at a time from a heap containing 21 coins.
 The player who has no coins to retrieve from the heap loses.
 
+## Preview
+
+<img src="readme-res/preview.jpg" width="650" height="340"/>
+
 ## More Information
 
 * https://en.wikipedia.org/wiki/Nim
