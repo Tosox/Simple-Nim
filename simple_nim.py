@@ -6,8 +6,8 @@ from custom.rand_types import RandType
 
 def get_player_type(uinput: str) -> PlayerType:
     uinput = uinput.lower()
-    if uinput == "player":
-        return PlayerType.PLAYER
+    if uinput == "human":
+        return PlayerType.HUMAN
     elif uinput == "ai":
         return PlayerType.AI
     elif uinput == "computer":
