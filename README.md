@@ -1,8 +1,8 @@
 # Simple Nim
 
 [![](https://img.shields.io/badge/Language-Python-yellow.svg?style=flat)](https://en.wikipedia.org/wiki/Python_(programming_language)) 
-[![](https://img.shields.io/github/languages/code-size/Tosox/Game-of-21?color=blue&label=Code%20size&style=flat)](https://github.com/Tosox/Game-of-21)
-[![](https://tokei.rs/b1/github/TosoxDev/Game-of-21?color=red&label=Total%20lines&style=flat)](https://github.com/Tosox/Game-of-21)
+[![](https://img.shields.io/github/languages/code-size/Tosox/Simple-Nim?color=blue&label=Code%20size&style=flat)](https://github.com/Tosox/Simple-Nim)
+[![](https://tokei.rs/b1/github/TosoxDev/Simple-Nim?color=red&label=Total%20lines&style=flat)](https://github.com/Tosox/Simple-Nim)
 
 **A simple game of Nim written in Python**
 
